@@ -1,0 +1,31 @@
+#if 0
+int *func()
+{
+    return new int;
+}
+
+int main()
+{
+    int *p = func(); // 这个p应该在哪里释放，这种写法，在func()与main()中都不合适
+    return 0;
+}
+#endif
+
+// 改为下面的方法比较好
+// 所以GTree中的remove操作最好是返回SharedPointer对象
+#if 1
+SharedPointer<int> func()
+{
+    return new int;
+}
+
+int main()
+{
+    SharedPointer<int> p = func();
+    return 0;
+}
+#endif
+
+// 总结：
+// 实用的设计原则：
+// 当需要从函数中返回堆中的对象时，实用智能指针（SharedPointer）作为函数的返回值

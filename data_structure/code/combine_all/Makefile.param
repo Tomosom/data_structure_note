@@ -1,0 +1,42 @@
+PARAM_DIR = $(PWD)/$(shell dirname $(PARAM_FILE))
+
+CFLAGS := -Wall
+CFLAGS += -Wno-unused-function
+CFLAGS += -Wno-unused-value
+CFLAGS += -Wno-unused-variable
+
+CFLAGS += -I$(PARAM_DIR)
+CFLAGS += -I$(PARAM_DIR)/pointer/
+CFLAGS += -I$(PARAM_DIR)/pointer/smart_pointer/
+CFLAGS += -I$(PARAM_DIR)/pointer/shared_pointer/
+CFLAGS += -I$(PARAM_DIR)/exception/
+CFLAGS += -I$(PARAM_DIR)/array/
+CFLAGS += -I$(PARAM_DIR)/array/dynamic_array/
+CFLAGS += -I$(PARAM_DIR)/array/static_array/
+CFLAGS += -I$(PARAM_DIR)/list/
+CFLAGS += -I$(PARAM_DIR)/list/seq_list/
+CFLAGS += -I$(PARAM_DIR)/list/seq_list/dynamic_list/
+CFLAGS += -I$(PARAM_DIR)/list/seq_list/static_list/
+CFLAGS += -I$(PARAM_DIR)/list/link_list/
+CFLAGS += -I$(PARAM_DIR)/list/link_list/static_link_list/
+CFLAGS += -I$(PARAM_DIR)/list/link_list/circle_list/
+CFLAGS += -I$(PARAM_DIR)/list/dual_link_list/
+CFLAGS += -I$(PARAM_DIR)/list/dual_link_list/dual_circle_list/
+CFLAGS += -I$(PARAM_DIR)/list/kernel_list
+CFLAGS += -I$(PARAM_DIR)/stack_and_queue/stack/
+CFLAGS += -I$(PARAM_DIR)/stack_and_queue/stack/static_stack/
+CFLAGS += -I$(PARAM_DIR)/stack_and_queue/stack/link_stack/
+CFLAGS += -I$(PARAM_DIR)/stack_and_queue/queue/
+CFLAGS += -I$(PARAM_DIR)/stack_and_queue/queue/static_queue/
+CFLAGS += -I$(PARAM_DIR)/stack_and_queue/queue/link_queue/
+CFLAGS += -I$(PARAM_DIR)/tstring/
+CFLAGS += -I$(PARAM_DIR)/sort/
+CFLAGS += -I$(PARAM_DIR)/tree/
+CFLAGS += -I$(PARAM_DIR)/tree/gtree/
+CFLAGS += -I$(PARAM_DIR)/tree/btree/
+CFLAGS += -I$(PARAM_DIR)/graph/
+CFLAGS += -I$(PARAM_DIR)/graph/matrix_graph/
+CFLAGS += -I$(PARAM_DIR)/graph/list_graph/
+
+SRC := $(PARAM_DIR)/object.cpp
+SRC += $(PARAM_DIR)/exception/exception.cpp

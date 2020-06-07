@@ -1,0 +1,51 @@
+#include <iostream>
+#include "link_list.h"
+
+using namespace std;
+using namespace DTLib;
+
+// 若不改善，泛指类型用此类会有问题
+class Test {
+
+public:
+    Test()
+    {
+        throw 0;
+    }
+
+};
+
+int main(int argc, char **argv)
+{
+    LinkList<Test> list0;
+
+#if 1
+    LinkList<int> list;
+
+    for(int i = 0; i < 5; i++) {
+        //list.insert(i);
+        list.insert(0, i);
+        list.set(0, i * i);
+    }
+
+    cout << "length ---> " << list.length() << endl;
+    for(int i = 0; i < list.length(); i++) {
+        cout << "main : " << list.get(i) << endl;
+    }
+
+
+    list.remove(2);
+    cout << "length ---> " << list.length() << endl;
+    for(int i = 0; i < list.length(); i++) {
+        cout << "main : " << list.get(i) << endl;
+    }
+
+    list.clear();
+    cout << "length ---> " << list.length() << endl;
+    for(int i = 0; i < list.length(); i++) {
+        cout << "main : " << list.get(i) << endl;
+    }
+#endif
+	return 0;
+
+}
